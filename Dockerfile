@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+RUN cp -r ./dist/. /usr/share/nginx/html
 RUN npm run build
 
 # production stage
