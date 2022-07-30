@@ -15,5 +15,5 @@ RUN touch /var/run/nginx.pid && \
   chown -R www-data:www-data /var/run/nginx.pid && \
   chown -R www-data:www-data /var/cache/nginx
 COPY --from=build-stage /app/dist /usr/share/nginx/html
-EXPOSE 80
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
